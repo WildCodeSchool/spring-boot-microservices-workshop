@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "discovery-server"
+		},
+		{
+			"path": "movie-catalog-service"
+		},
+		{
+			"path": "movie-info-service"
+		},
+		{
+			"path": "ratings-data-service"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "automatic"
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "java",
+				"request": "launch",
+				"name": "discovery",
+				"mainClass": "io.javabrains.discoveryserver.DiscoveryServerApplication"
+			}
+		],
+		"compounds": [
+			{
+				"name": "StartAllServices",
+				"configurations": ["discovery", "movie-catalog", "movie-info", "ratings-data"]
+			}
+		]
+	}
+}
