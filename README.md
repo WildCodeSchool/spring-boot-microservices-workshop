@@ -2,4 +2,5 @@
 
 Dans cet atelier, vous apprendrez à lancer un système dont l'architecture est en microservices.
 
-Vous découvrirez le rôle du discovery dans la communication entre microservices
+Vous découvrirez le rôle du discovery et la communication entre microservices.
+

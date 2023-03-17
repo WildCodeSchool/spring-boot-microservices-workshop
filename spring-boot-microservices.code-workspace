@@ -24,13 +24,63 @@
 				"type": "java",
 				"request": "launch",
 				"name": "discovery",
+				"projectName": "discovery-server",
 				"mainClass": "io.javabrains.discoveryserver.DiscoveryServerApplication"
+			},
+			{
+				"type": "java",
+				"request": "launch",
+				"name": "ratings-data",
+				"projectName": "ratings-data-service",
+				"mainClass": "com.wcs.ratingsdataservice.RatingsDataServiceApplication"
+			},
+			{
+				"type": "java",
+				"request": "launch",
+				"name": "movie-info",
+				"projectName": "movie-info-service",
+				"mainClass": "io.javabrains.movieinfoservice.MovieInfoServiceApplication"
+			},
+			{
+				"type": "java",
+				"request": "launch",
+				"name": "movie-catalog",
+				"projectName": "movie-catalog-service",
+				"mainClass": "io.javabrains.moviecatalogservice.MovieCatalogServiceApplication"
 			}
 		],
 		"compounds": [
 			{
 				"name": "StartAllServices",
-				"configurations": ["discovery", "movie-catalog", "movie-info", "ratings-data"]
+				"configurations": [
+					"movie-catalog",
+					"movie-info",
+					"ratings-data"
+				],
+				"presentation": {
+					"hidden": false,
+					"group": "services",
+					"order": 1
+				},
+				"stopAll": true
+			}
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Sleepdelay",
+				"type": "shell",
+				"command": "sleep 15",
+				"windows": {
+					"command": "ping 127.0.0.1 -n 4 > nul"
+				},
+				"group": "none",
+				"presentation": {
+					"reveal": "silent",
+					"panel": "new"
+				}
 			}
 		]
 	}
