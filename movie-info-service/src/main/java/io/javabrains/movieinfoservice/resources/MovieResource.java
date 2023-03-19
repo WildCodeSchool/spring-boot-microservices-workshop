@@ -7,7 +7,10 @@ import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +21,16 @@ import io.javabrains.movieinfoservice.models.Movie;
 @RestController
 @RequestMapping("/movies")
 public class MovieResource {
+    record AddMovieDTO(String title, String description) {
+    }
 
+    @PostMapping()
+    public Movie addMovie(@RequestBody AddMovieDTO params) {
+        String movieId = RandomStringUtils.randomAlphanumeric(5);
+        System.out.println("CREATE MOVIE " + params + " - id: " + movieId);
+        return new Movie(movieId, params.title, params.description);
+
+    }
     @RequestMapping("/{movieId}")
     public Movie getMovieInfo(@PathVariable("movieId") String movieId) {
 
