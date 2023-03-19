@@ -32,7 +32,7 @@
 				"request": "launch",
 				"name": "ratings-data",
 				"projectName": "ratings-data-service",
-				"mainClass": "com.wcs.ratingsdataservice.RatingsDataServiceApplication"
+				"mainClass": "io.javabrains.ratingsdataservice.RatingsDataServiceApplication"
 			},
 			{
 				"type": "java",
